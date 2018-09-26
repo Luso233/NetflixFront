@@ -47,14 +47,20 @@ birth_date:''
                 password:this.state.password,
                 birth_date:this.state.birth_date
             }
+        }).then(response => {
+            console.log(response);
+            alert('Todo chido')
+        }).catch(err => {
+            console.log(err);
+            alert('Todo dlv :(')
         })
-        
+    
     }
     render(){ 
         return (
             <Mutation mutation={CREATE_USER}>
             {(signup,{data}) =>(<div>
-           <form onSubmit={(e)=>this.onFormSubmit(e,signup)}>
+           <form onSubmit={(event)=>this.onFormSubmit(event,signup)}>
             <div class="row">
         <div class="input-field col s6">
           <input  id="name" type="text" className="validate"
@@ -101,7 +107,7 @@ birth_date:''
         <label class="active" for="first_name2">Fecha de nacimiento</label>
       </div>
     </div>
-    <a type = "submit" class ="waves-effect waves-light btn">button</a>
+    <button type="submit"></button>
     </form>
     </div> )} 
             
